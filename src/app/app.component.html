@@ -1,0 +1,18 @@
+<div class="toolbar" role="banner">     
+    <div class="spacer"><span>Search Engine</span></div>  
+</div>
+
+<div class="content" role="main">
+  
+  <input type="text" id="textId" (keyup)="onKey($event)" #searchString />
+  <ul>
+    <li *ngFor="let val of value">
+        {{ val.data }}
+    </li>
+  </ul>
+
+  <button type="submit" value="Search" (click)="search(searchString.value)">Search</button>
+  <div *ngIf="flag">
+    <mat-paginator></mat-paginator>
+  </div>
+</div>
